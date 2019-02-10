@@ -6,7 +6,8 @@ class ThirdQuestion extends React.Component {
     state = {
         thirdData: "",
         thirdClick: false,
-        removeData: false
+        removeData: false,
+        error: false
     }
 
     handleFormChange = (event) => {
@@ -16,13 +17,14 @@ class ThirdQuestion extends React.Component {
     }
 
     handleButtonClick = () => {
-        if (this.state.thirdData.toLowerCase() === "pizza") {
-
+        if (this.state.thirdData.toLowerCase() === "pizza") 
             this.setState({
                 thirdClick: true,
                 removeData: true
             })
-        }
+            else this.setState({
+                error: true
+            })
     }
 
     render() {
@@ -44,6 +46,7 @@ class ThirdQuestion extends React.Component {
                     />
                 </Form.Group>
             </Form>
+            {this.state.error && <h4>Correct answer is inside the Resume!</h4> }
         </Segment>
         }
             </div>

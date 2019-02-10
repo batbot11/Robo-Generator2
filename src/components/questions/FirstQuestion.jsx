@@ -7,7 +7,8 @@ class FirstQuestion extends React.Component {
     state = {
         firstData: "",
         firstClick: false,
-        removeData: false
+        removeData: false,
+        error: false
     }
 
     handleFormChange = (event) => {
@@ -21,6 +22,9 @@ class FirstQuestion extends React.Component {
         this.setState({
             firstClick: true,
             removeData: true
+        })
+        else this.setState({
+            error: true
         })
     }
 
@@ -43,6 +47,7 @@ class FirstQuestion extends React.Component {
                         />
                     </Form.Group>
                 </Form>
+                {this.state.error && <h4>Oops! Wrong Answer. Try Again</h4> }
             </Segment>
             }
              <SecondQuestion firstClick = {this.state.firstClick} />
