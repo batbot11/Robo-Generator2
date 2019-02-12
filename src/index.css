@@ -38,3 +38,17 @@ body {
 h4 {
   color: lightcoral;
 }
+
+h1 {
+  color: whitesmoke
+}
+
+.ui.segment.avatar-form  {
+  position: relative;
+  top: 10vh
+}
+
+.roboto {
+  font-family: 'Bungee Shade', cursive;
+  color: black
+}
